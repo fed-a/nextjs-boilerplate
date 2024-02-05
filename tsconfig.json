@@ -18,9 +18,17 @@
       }
     ],
     "paths": {
-      "@/components/*": ["./src/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "./.env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "jest.setup.ts1",
+    "jest.config.ts1"
+  ],
   "exclude": ["node_modules"]
 }
