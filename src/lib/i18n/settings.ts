@@ -13,13 +13,6 @@ export const LOCALE_NAMES: Record<Locale, string> = {
   ru: 'Русский',
 };
 
-export type LocaleParam = {
-  locale: Locale;
-};
-export type PropsWithLocale<T = object> = T & {
-  params: LocaleParam;
-};
-
 export type I18nConfig = Parameters<typeof i18nRouter>[1];
 
 export function getOptions(lng = DEFAULT_LOCALE, ns: string = DEFAULT_NS) {

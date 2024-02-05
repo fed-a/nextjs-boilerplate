@@ -5,6 +5,7 @@ import { PropsWithChildren } from 'react';
 import { LOCALES, Locale, NS_LIST, initTranslations } from '@/lib';
 import { setLocale } from '@/lib/context';
 import '../globals.css';
+import { ParamsProps } from '@/types';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,7 +21,7 @@ export async function generateStaticParams() {
 export default async function RootLayout({
   children,
   params: { locale },
-}: Readonly<PropsWithChildren<{ params: { locale: Locale } }>>) {
+}: Readonly<PropsWithChildren<ParamsProps<{ locale: Locale }>>>) {
   setLocale(locale);
   // eslint-disable-next-line no-unused-vars
   const { resources } = await initTranslations(locale, NS_LIST);
